@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
+RUN apt-get -yqq update
+RUN apt-get install -yqq python 
+RUN apt-get -yqq install python-pip
 
 # We copy just the requirements.txt first to leverage Docker cache
 COPY ./requirements.txt /app/requirements.txt
